@@ -37,11 +37,17 @@ Node.js, Express, Socket.IO 3, Sequelize, MySQL, js-chess-engine, jsonwebtoken, 
 
 ## Getting started
 
-The server reads its settings from `defaults.json`: the port, the JWT secret and the Sequelize connection options for MySQL. Point it at your own database, then:
+The server reads its settings from environment variables (see `.env.example`):
+
+| Variable | Meaning |
+| --- | --- |
+| `JWT_SECRET` | secret for signing tokens, required |
+| `MYSQL_URL` | Sequelize connection URI, e.g. `mysql://user:password@localhost:3306/chess`, required |
+| `PORT` | port to listen on, `4000` by default |
 
 ```bash
 npm install
-npm start
+JWT_SECRET=change-me MYSQL_URL=mysql://user:password@localhost:3306/chess npm start
 ```
 
 Use `npm run server` to run it with nodemon. The [client](https://github.com/Mr2NEC/my-chess-react) expects the server at `http://localhost:4000`.
@@ -49,6 +55,9 @@ Use `npm run server` to run it with nodemon. The [client](https://github.com/Mr2
 ## What I would do differently today
 
 - Keep one engine instance per game in a shared store instead of one per connection, and validate a move before saving it
-- Read secrets and connection settings from environment variables
 - Write it in TypeScript with typed event payloads shared between the client and the server
 - Add tests for the game flow
+
+## Author
+
+Vladyslav Shpylka - [LinkedIn](https://www.linkedin.com/in/vshpylka/) · [GitHub](https://github.com/Mr2NEC)
