@@ -1,5 +1,0 @@
-{
-    "jwtSecret": "b4pVmNkmbQGYkVuaakbKMDplko",
-    "mysql": "mysql://mychess@localhost/mychess",
-    "PORT": 4000
-}

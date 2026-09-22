@@ -6,7 +6,7 @@ const { addUser } = require('./sequelize/action/addUser');
 const loginUser = require('./sequelize/action/loginUser');
 const jsChess = require('js-chess-engine');
 
-const { PORT } = require('./defaults.json');
+const { PORT } = require('./config');
 let usersArr = [];
 
 const io = require('socket.io')(server, {
@@ -274,4 +274,4 @@ io.on('connection', async (client) => {
     }
 });
 
-server.listen(process.env.PORT || PORT);
+server.listen(PORT);

@@ -1,4 +1,4 @@
-const { jwtSecret } = require('../../defaults.json');
+const { jwtSecret } = require('../../config');
 const { bcrypt } = require('./addUser');
 const { jwt } = require('../../authValidate');
 const User = require('../schema/userSchema');

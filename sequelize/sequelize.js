@@ -1,6 +1,6 @@
 
 const { Sequelize } = require('sequelize');
-const {mysql} = require("../defaults.json");
+const {mysql} = require("../config");
 const sequelize = new Sequelize(mysql);
 
 

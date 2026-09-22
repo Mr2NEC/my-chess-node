@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('./sequelize/schema/userSchema');
-const { jwtSecret } = require('./defaults.json');
+const { jwtSecret } = require('./config');
 
 async function tokenValidate(socket) {
     try {
